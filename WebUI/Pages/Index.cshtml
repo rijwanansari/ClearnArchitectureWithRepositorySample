@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "App Setting";
+}
+@if (!String.IsNullOrEmpty(Model.Message))
+{
+    <h2>@Model.Message</h2>
+}
+else
+{
+    <h3>App setting</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Reference Key</th>
+                <th scope="col">Type</th>
+                <th scope="col">Value</th>
+                <th scope="col">Caption</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.AppSettingVms)
+            {
+                <tr>
+                    <th scope="row">@item.ReferenceKey</th>
+                    <td>@item.Type</td>
+                    <td>@item.Value</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

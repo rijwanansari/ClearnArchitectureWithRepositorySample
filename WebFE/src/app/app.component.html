@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!appSettings"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<table *ngIf="appSettings" class="table">
+    <thead>
+        <tr>
+            <th>Reference Key</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Caption</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appSetting of appSettings">
+          <td>{{ appSetting.referenceKey }}</td>
+          <td>{{ appSetting.type }}</td>
+          <td>{{ appSetting.value }}</td>
+          <td>{{ appSetting.description }}</td>
+        </tr>
+    </tbody>
+</table>
